@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "players",
+  "info": {
+    "singularName": "player",
+    "pluralName": "players",
+    "displayName": "Player",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "ranking": {
+      "required": true,
+      "type": "integer"
+    },
+    "last_name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "competitions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::competition.competition",
+      "mappedBy": "players"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "country": {
+      "type": "string",
+      "unique": false,
+      "required": false
+    }
+  }
+}
