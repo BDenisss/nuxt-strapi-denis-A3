@@ -836,9 +836,9 @@ export interface ApiPlayerPlayer extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    first_name: Attribute.String & Attribute.Required & Attribute.Unique;
+    first_name: Attribute.String & Attribute.Required;
     ranking: Attribute.Integer & Attribute.Required;
-    last_name: Attribute.String & Attribute.Required & Attribute.Unique;
+    last_name: Attribute.String & Attribute.Required;
     competitions: Attribute.Relation<
       'api::player.player',
       'manyToMany',
@@ -847,6 +847,9 @@ export interface ApiPlayerPlayer extends Schema.CollectionType {
     image: Attribute.Media;
     slug: Attribute.String & Attribute.Unique;
     country: Attribute.String;
+    age: Attribute.Integer;
+    style: Attribute.String;
+    country_player: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

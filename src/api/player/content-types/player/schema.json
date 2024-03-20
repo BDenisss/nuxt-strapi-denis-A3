@@ -14,7 +14,7 @@
   "attributes": {
     "first_name": {
       "type": "string",
-      "unique": true,
+      "unique": false,
       "required": true
     },
     "ranking": {
@@ -23,7 +23,7 @@
     },
     "last_name": {
       "type": "string",
-      "unique": true,
+      "unique": false,
       "required": true
     },
     "competitions": {
@@ -49,6 +49,23 @@
       "type": "string",
       "unique": false,
       "required": false
+    },
+    "age": {
+      "type": "integer",
+      "required": false
+    },
+    "style": {
+      "type": "string"
+    },
+    "country_player": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
